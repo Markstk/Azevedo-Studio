@@ -12,7 +12,7 @@
         <nav>
             <ul>
                 <li><a href="#Studio">Studio</a></li>
-                <li><a href="#Portfolio">Portfolio</a></li> <!-- Corrigido -->
+                <li><a href="#Portfolio">Portfolio</a></li>
                 <li><a href="https://wa.me/5519992895241?text=Olá,%20quero%20mais%20informações!" target="_blank">Contato</a></li>
                 <li><a href="https://www.instagram.com/vz_ink/" target="_blank"><img src="./assets/instagram.png" alt="Icone do Instagram" class="nav__insta"></a></li>
             </ul>
@@ -22,17 +22,49 @@
         <section>
             <div>
                 <h1>Azevedo Studio</h1>
-                
+                <p class="texto__descricao">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores architecto optio earum quis eaque eveniet quisquam expedita suscipit sed? Aliquid odio in laborum voluptates? Ducimus, rem possimus. Eos, pariatur reiciendis.</p>
             </div>
         </section>
         <section>
             <div class="container">
-                <img src="./assets/Captura de tela 2024-09-17 233507.png" alt="Tatuagem Berserk" class="container__imagem"> <!-- Removido o espaço no nome do arquivo -->
-                <img src="./assets/tattooghost.jpg" alt="Tatuagem Fantasma" class="container__imagem">
-                <img src="./assets/tatto3.jpg" alt="Tatuagem com três personagens em balanço" class="container__imagem"> <!-- Descrição mais clara -->
+                <img src="./assets/Captura de tela 2024-09-17 233507.png" alt="Tatuagem Berserk" class="container__imagem photo" onclick="openFullscreen(this)">
+                <img src="./assets/tattooghost.jpg" alt="Tatuagem Fantasma" class="container__imagem photo" onclick="openFullscreen(this)">
+                <img src="./assets/tatto3.jpg" alt="Tatuagem com três personagens em balanço" class="container__imagem photo" onclick="openFullscreen(this)">
             </div>
         </section>
     </main>
     <footer></footer>
+    <script>
+        const photos = document.querySelectorAll('.photo');
+
+        photos.forEach(photo => {
+            photo.addEventListener('mouseover', () => {
+                photos.forEach(p => {
+                    if (p !== photo) {
+                        p.classList.add('dim');
+                    }
+                });
+            });
+
+            photo.addEventListener('mouseout', () => {
+                photos.forEach(p => p.classList.remove('dim'));
+            });
+        });
+
+        function openFullscreen(img) {
+            const fullscreenDiv = document.createElement('div');
+            fullscreenDiv.classList.add('fullscreen');
+
+            const fullscreenImg = document.createElement('img');
+            fullscreenImg.src = img.src;
+
+            fullscreenDiv.appendChild(fullscreenImg);
+            document.body.appendChild(fullscreenDiv);
+
+            fullscreenDiv.addEventListener('click', function() {
+                document.body.removeChild(fullscreenDiv);
+            });
+        }
+    </script>
 </body>
 </html>
