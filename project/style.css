@@ -13,18 +13,19 @@ body {
 
 header {
     display: flex;
-    align-items: center; /* Alinha verticalmente */
-    justify-content: space-between; /* Espaço entre logo e nav */
-    padding: 10px 20px; /* Adiciona um pouco de espaço */
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 20px;
 }
 
 .imagem__logo { 
-    width: 150px; /* Ajuste para um tamanho menor */
-    height: auto; /* Mantém a proporção */
+    width: 150px;
+    height: auto;
 }
 
 nav {
-    padding: 0; /* Certifique-se de que o padding está em 0 */
+    padding: 0;
+    padding-bottom: 20px;
 }
 
 nav ul {
@@ -35,7 +36,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 10px; /* Pode ajustar o margin aqui se necessário */
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -78,4 +79,21 @@ nav ul li a:hover::before {
 
 .texto__paragrafo {
     color: #ffffff;
+}
+
+.nav__insta { 
+    width: 24px;
+    height: 24px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container__imagem {
+    width: 300px;
+    height: 400px; /* Mantém a proporção da imagem */
 }
