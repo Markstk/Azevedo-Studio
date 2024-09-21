@@ -7,9 +7,16 @@
 }
 
 body {
-    background-color: #191919;
+    background-image:url(./assets/background\ texture.webp);
+    background-size: cover;
+    background-position: center;
     font-family: 'Ubuntu', sans-serif;
     color: #B6DECF;
+}
+
+.logo_img{ 
+    width: 100px;
+    height: 100px;
 }
 
 header {
@@ -89,7 +96,7 @@ nav ul li a:hover::before {
     width: 50%; /* Ajuste conforme necessário */
     text-align: left; /* Alinhado à esquerda */
     margin: 0; /* Remove margens externas, se necessário */
-    padding: 0 20px 20px 0; /* Ajuste o preenchimento conforme necessário */
+    padding: 0 20px 90px 0; /* Ajuste o preenchimento conforme necessário */
 }
 
 .container {
@@ -104,11 +111,12 @@ nav ul li a:hover::before {
     height: 400px;
     border-radius: 10px;
     padding: 0 0 3px 0;
-    transition: opacity 0.3s;
+    transition: filter 0.9s ease;
+    filter: grayscale(0%);
 }
 
 .photo.dim {
-    opacity: 0.5; /* Escurece a foto */
+    filter: grayscale(100%);
 }
 
 .fullscreen {
@@ -127,4 +135,18 @@ nav ul li a:hover::before {
 .fullscreen img {
     max-width: 90%;
     max-height: 90%;
+}
+
+.container__cuidados{
+    display: flex;
+    flex-direction: column; /* Muda para row para organizar em linha */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 20px;
+}
+
+.conteudo__cuidados{
+    display: flex;
+    flex-direction: column; /* Organiza os parágrafos em linha */
+    gap: 20px; /* Espaçamento entre os itens */
 }
