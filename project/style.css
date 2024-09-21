@@ -7,14 +7,14 @@
 }
 
 body {
-    background-image:url(./assets/background\ texture.webp);
+    background-image: url('./assets/background texture.webp'); /* Corrigido: aspas adicionadas */
     background-size: cover;
     background-position: center;
     font-family: 'Ubuntu', sans-serif;
     color: #B6DECF;
 }
 
-.logo_img{ 
+.logo_img { 
     width: 100px;
     height: 100px;
 }
@@ -81,7 +81,7 @@ nav ul li a:hover::before {
     height: 24px;
 }
 
-.container__introducao{
+.container__introducao {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -93,10 +93,10 @@ nav ul li a:hover::before {
 .texto__descricao {
     font-weight: 300;
     font-size: 40px;
-    width: 50%; /* Ajuste conforme necessário */
-    text-align: left; /* Alinhado à esquerda */
-    margin: 0; /* Remove margens externas, se necessário */
-    padding: 0 20px 90px 0; /* Ajuste o preenchimento conforme necessário */
+    width: 50%;
+    text-align: left;
+    margin: 0;
+    padding: 0 20px 90px 0;
 }
 
 .container {
@@ -129,7 +129,7 @@ nav ul li a:hover::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000; /* Para ficar acima de outros elementos */
+    z-index: 1000;
 }
 
 .fullscreen img {
@@ -137,16 +137,29 @@ nav ul li a:hover::before {
     max-height: 90%;
 }
 
-.container__cuidados{
+.container__cuidados {
     display: flex;
-    flex-direction: column; /* Muda para row para organizar em linha */
-    align-items: center; /* Centraliza horizontalmente */
-    text-align: center; /* Alinha o texto ao centro */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 20px;
 }
 
-.conteudo__cuidados{
+.conteudo__cuidados {
     display: flex;
-    flex-direction: column; /* Organiza os parágrafos em linha */
-    gap: 20px; /* Espaçamento entre os itens */
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.container__cuidados, .container__map {
+    flex: 1;
+    margin: 10px;
 }
