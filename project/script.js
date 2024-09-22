@@ -1,30 +1,42 @@
 const photos = document.querySelectorAll('.photo');
 
-        photos.forEach(photo => {
-            photo.addEventListener('mouseover', () => {
-                photos.forEach(p => {
-                    if (p !== photo) {
-                        p.classList.add('dim');
-                    }
-                });
-            });
-
-            photo.addEventListener('mouseout', () => {
-                photos.forEach(p => p.classList.remove('dim'));
-            });
+// Adiciona o evento de mouseover e mouseout para aplicar a classe 'dim'
+photos.forEach(photo => {
+    photo.addEventListener('mouseover', () => {
+        photos.forEach(p => {
+            if (p !== photo) {
+                p.classList.add('dim');
+            }
         });
+    });
 
-        function openFullscreen(img) {
-            const fullscreenDiv = document.createElement('div');
-            fullscreenDiv.classList.add('fullscreen');
+    photo.addEventListener('mouseout', () => {
+        photos.forEach(p => p.classList.remove('dim'));
+    });
+});
 
-            const fullscreenImg = document.createElement('img');
-            fullscreenImg.src = img.src;
+// Função para abrir a imagem em fullscreen
+function openFullscreen(img) {
+    const fullscreenDiv = document.createElement('div');
+    fullscreenDiv.classList.add('fullscreen');
 
-            fullscreenDiv.appendChild(fullscreenImg);
-            document.body.appendChild(fullscreenDiv);
+    const fullscreenImg = document.createElement('img');
+    fullscreenImg.src = img.src;
 
-            fullscreenDiv.addEventListener('click', function() {
-                document.body.removeChild(fullscreenDiv);
-            });
-        }
+    fullscreenDiv.appendChild(fullscreenImg);
+    document.body.appendChild(fullscreenDiv);
+
+    // Remove o fullscreen quando clicar na imagem
+    fullscreenDiv.addEventListener('click', function() {
+        document.body.removeChild(fullscreenDiv);
+    });
+}
+
+// Lógica do menu hambúrguer
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+
+hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
